@@ -37,9 +37,9 @@ app.use(cookieParser());
 app.use(sessions({
     cookieName: 'session',
     secret:"wiywtekfdgldk2635273smdgs685",
-    resave :false,
-    saveUninitialized:true
+    duration: 7 * 24 * 60 * 60 * 1000
 }));
+
 app.use(function (req,res,next) {
     if(req.session && req.session.user) {
         User.findOne({username: req.session.username}, function (err, user) {
