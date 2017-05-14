@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2 Game</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="http://plasticosroca.com/wp-content/uploads/2016/12/instant_rockstar_r_logo_red_transparency.png">
+    <link href="stylesheets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Alegreya|Pacifico|Pangolin|Stint+Ultra+Expanded|Shadows+Into+Light" rel="stylesheet">
+    <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+    <style type="text/css">
+        html{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            background: url(https://image.freepik.com/free-vector/grey-linen-texture-background_1053-253.jpg), no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        h1{
+            font-family: 'Acme', sans-serif;
+        }
+            b,p,label{
+            font-family: 'Acme', sans-serif;
+        }
+        .list{
+            font-family: 'Stint Ultra Expanded', cursive;
+                text-align: left;
+            }
+            ul{
+                text-align: left;
+                font-weight: bolder;
+                font-family: 'Stint Ultra Expanded', cursive;
+            }
+            .col-lg-10{
+                font-family: 'Acme', sans-serif;
+                border-radius: 10px 10px 10px 10px;
+            }
+            .rules{
+                display: none;
+                font-size: normal;
+                margin: 0 5% 0 5%;
+            }
+            .r{
+                margin: 0 3% 5% 3%;
+            }
+            .start-button-container{
+                padding: 10% 0 2% 0;
+            }
+}
+    </style>
+</head>
+<body class="fadeIn animated">
+    <div class="start-button-container"><center><a href="wordhunt.html"><button class="b btn btn-success bounceInLeft animated">START GAME</button></a></center></div>
+    <div class="info-button-container" id="play_rule">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10"><br><br><center><button class="btn btn-info bounceInRight animated" id="info" onclick="gameRules()">How 2 Play</button></center><br><br>
+            <div class="rules" id="rule">
+                <p1 class="r">Press the start button to begin the game<br> Enter any five lettered word,in the box provided and then click the DONE button;The idea is to guess the word which the system has generated within 30 seconds. If you are able to guess the word you win, otherwise a clue will be displayed<br> Just like this:<br>
+                    <center>
+                        <input id="l1" class="input-xlarge" style="background-color: lightgreen" type="text" size="2" value="s" readonly>
+                        <input id="l2" class="input-xlarge" style="background-color: yellow" type="text" size="2" value="i" readonly>
+                        <input id="l3" class="input-xlarge" style="background-color: #FF0000;" type="text" size="2" value="o" readonly>
+                        <input id="l4" class="input-xlarge" style="background-color: lightgreen" type="text" size="2" value="l" readonly>
+                        <input id="l5" class="input-xlarge" style="background-color: #FF0000;" type="text" size="2" value="r" readonly>
+                    </center><br>
+                    <ul class="list">
+                        <li><strong>The letters within the Green boxes are in the original word and at that position itself.</strong></li>
+                        <li><strong>The letters within the Yellow boxes are there in the original word but not at that position.</strong></li>
+                        <li><strong>The letters within the Red boxes are not there in the original word.</strong></li>
+                    </ul>For this Example the word may be <q>smile</q><br>A few things to keep a note about:<ul><li>The letters will never be repeated.</li><li>The words are NOT case sensitive.</li><li>The words will be simple and meaningful.</li></ul>
+                <strong><u>The Points Table:</u></strong><br>The points table will keep track of the maximum points that can be earned after that attempt.<br>The Number of attempts will also be kept in track and points will be deducted for each extra attempt.<br>The counter will keep the track of the time taken to guess the word.<br>For every 30 seconds 4 points will be deducted.
+                </p1>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function gameRules(){
+            $('#rule').fadeToggle('slow');
+        }
+    </script>
+
+</body>
+</html>

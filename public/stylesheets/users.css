@@ -1,0 +1,27 @@
+header{
+    font-size: xx-large;
+    text-align: center;
+    color: #9932CC;
+    font-family: 'Russo One', sans-serif;
+    padding: 10% 0% 0 0;
+}
+#user-data-div {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Aerial, sans-serif;
+}
+ul{
+    padding :0;
+}
+ul,li{
+    list-style-type: none;
+    background-color: #DBDBDB;
+    padding:10px;
+    margin-bottom: 10px;
+}
+ul li .edit{
+    display:none;
+}
+hr{
+    background-color: #0f0f0f;
+}
+

@@ -1,0 +1,88 @@
+ header{
+    padding-top: 4%;
+    padding-bottom: 2%;
+    width: 100%;
+    background-color: #36648B;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+    position: relative;
+}
+h1{
+    padding-top: 4%;
+    padding-bottom: 2%;
+    width: 95%;
+    background-color: #009ACD;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    font-size: x-large;
+    border-radius: 10px 10px 10px 10px;
+    /*box-shadow: 5px 5px 5px #009ACD;*/
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #FFE1FF;
+    background-size: 100% 100%;
+}
+.col-lg-12{
+    display: inline-flex;
+}
+.input-group{
+    padding: 10% 20% 2% 20%;
+}
+input,.input-container{
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+}
+#msg-text{
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+}
+p,label,span{
+    font-family: 'Acme', sans-serif;
+}
+.list{
+    font-family: 'Josefin Slab', serif;
+    text-align: left;
+}
+.rules{
+    font-family: 'Russo One', sans-serif;
+    display: none;
+    margin: 0 5% 0 5%;
+}
+.r{
+    margin: 0 3% 5% 3%;
+}
+.points-Container{
+    background-color: #FFD39B;
+    border-radius: 10px 10px 10px 10px;/*top-left top-right bottom-left bottom-right*/
+}
+.info-button-container{
+    bottom: 0;
+}
+.topper-container{
+    margin-top: 20%;
+}
+/*#clue_display,p,#word_display{
+    margin-left: 3%;
+    font-weight: bold;
+    font-family: arial;
+    outline-color: white;
+}
+#clue_display{
+    background-color: ;
+    margin-left: 40%;
+    font-weight: bold;
+    font-family: arial;
+    outline-color: white;
+}
+*/

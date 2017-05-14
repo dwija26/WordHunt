@@ -1,0 +1,12 @@
+header{
+    padding-top: 4%;
+    padding-bottom: 2%;
+    width: 100%;
+    background-color: #36648B;
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    font-weight: bold;
+    font-size: x-large;
+    text-align: center;
+    position: relative;
+}

@@ -1,0 +1,21 @@
+header{
+    font-size: xx-large;
+    text-align: center;
+    color: #9932CC;
+    font-family: 'Russo One', sans-serif;
+    padding: 3% 0 0 0;
+}
+.input-group{
+    text-align: center;
+    padding :5% 0 0 0;
+}
+
+.button1{
+padding: 1% 42% 1% 42%;
+color: white;
+background-color: #104E8B;
+font-family: 'Josefin Slab', serif;
+}
+.button1:hover{
+    color: white;
+}

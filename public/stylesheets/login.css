@@ -1,0 +1,51 @@
+header{
+    font-size: xx-large;
+    text-align: center;
+    color: #9932CC;
+    font-family: 'Russo One', sans-serif;
+    padding: 10% 0% 0 0;
+}
+.input-group{
+    text-align: center;
+    padding :5% 0% 0% 0%;
+}
+#checkbox{
+    text-align: left;
+}
+.login{
+    padding: 1% 45% 1% 45%;
+    color: white;
+    background-color: #104E8B;
+    font-family: 'Josefin Slab', serif;
+}
+.signup{
+    padding: 1% 42% 1% 42%;
+    color: white;
+    background-color: #008B00;
+    font-family: 'Josefin Slab', serif;
+}
+.signup:hover{
+     color: white;
+}
+.login:hover{
+    color: white;
+}
+.signup-button-container{
+    padding :5% 0% 0% 0%;
+}
+#user-data-div {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Aerial, sans-serif;
+}
+ul{
+    padding :0;
+}
+ul,li{
+    list-style-type: none;
+    background: #efefef;
+    padding:10px;
+    margin-bottom: 10px;
+}
+ul li .edit{
+    display:none;
+}

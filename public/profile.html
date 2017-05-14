@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WordHunt | Player_Name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="http://plasticosroca.com/wp-content/uploads/2016/12/instant_rockstar_r_logo_red_transparency.png">
+    <link href="stylesheets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Acme|Josefin+Slab|Russo+One" rel="stylesheet">
+    <link href="stylesheets/profile.css" rel="stylesheet" >
+    <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="https://raw.githubusercontent.com/janl/mustache.js/master/mustache.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header>Welcome to Single Player</header>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="wordhunt.html">WordHunt</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li ><a href="index.html">Home</a></li>
+                <li class="active"><a href="profile.html">Profile</a></li></li>
+                <li><a href="leaderboard.html">LeaderBoard</a></li>
+                <li><a href="achievements.html">Achievements</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="admin.html"><span class="glyphicon glyphicon-user"></span>Admin </a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="span3 well">
+        <center>
+            <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" class="img-circle"></a>
+            <h3>Player_name</h3>
+            <em>click on the dp for more</em>
+        </center>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <center>
+                        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" border="0" class="img-circle"></a>
+                        <h3 class="media-heading">-------<small>Player_City</small></h3>
+                        <span><strong>Top Scores: </strong></span>
+                        <span class="label label-warning">Score1</span>
+                        <span class="label label-info">Score2</span>
+                        <span class="label label-info">Score3</span>
+                        <span class="label label-success">Score4</span>
+                    </center>
+                    <hr>
+                    <center>
+                        <p class="text-left"><strong>Bio: </strong><br>
+                            About the Player
+                            <br>
+                    </center>
+                </div>
+                <div class="modal-footer">
+                    <center>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-default">Edit</button>
+                    </center>
+                </div>
+            </div>
+
+<script>
+    $(function(){
+        $.ajax({
+            type : 'GET',
+            url :'/profile',
+            success: function(session){
+                $('#myModalLabel').append('<span>'+session.username+'</span><hr>');
+                $('#media-heading').append('<span>'+session.username+'</span><hr>');
+            },
+            error: function(){
+                alert('Error loading the contents');
+            }
+        });
+    });
+</script>
+</body>
+</html>
