@@ -21,7 +21,6 @@ var app = express(); //object to use express
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
 app.use(favicon(path.join(__dirname, 'public/images', 'icon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json()); //as a middleware so must use this !!
@@ -32,6 +31,7 @@ app.use('/about', about);
 
 
 //MIDDLEWARE
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(sessions({
@@ -59,7 +59,7 @@ app.use(function (req,res,next) {
 
 function requireLogin(req,res,next) {
     if(!req.user){
-        res.redirect('/login.html');
+        res.redirect('/login');
     }else{
         next();
     }
@@ -74,14 +74,15 @@ var db = mongoose.connection;
 // <---- This is for Sign  ---->
 app.post('/register',function (req,res) {
     var user = req.body;
-    var hash = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));
-    user.password = hash;
+    // var hash;
+    // hash = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10));
+    // user.password = hash;
     User.addUser(user, function (err) {
         if(err){
-            res.redirect('/register.html');
+            res.redirect('/signup');
         }
         else{
-            res.redirect('/login.html');
+            res.redirect('/login');
             // res.json(user);
         }
     });
@@ -93,7 +94,8 @@ app.post('/verify', function (req,res) {
     var user=req.body;
     User.verifyPassword(user, function (err,call) {
         if (err) {
-            res.redirect('/login.html');
+            console.log(err);
+            res.redirect('/login');
         }
         if((!call)) {//if everything is correct
             // req.session.user = user;
@@ -107,7 +109,13 @@ app.post('/verify', function (req,res) {
     });
 });
 
-app.get('/wordhunt',requireLogin,function(req,res){
+app.get('/login',function(req,res){
+    res.redirect('/login.html');
+});
+app.get('/signup',function(req,res){
+    res.redirect('/register.html');
+});
+app.get('/wordhunt',function(req,res){
     res.redirect('/wordhunt.html');
 });
 app.get('/admin',requireLogin,function(req,res){
@@ -181,7 +189,7 @@ app.post('/logout',function(req,res){
         if(err) {
             console.log(err);
         } else {
-            res.redirect('/index.html');
+            res.redirect('/');
         }
     });
 
@@ -208,9 +216,11 @@ app.post('/logout',function(req,res){
 //CONNECTING TO MONGODB ON START
 
 
-mongoose.connect('mongodb://localhost:27017/userdata', function(err) {
+mongoose.connect('mongodb://raj:raj@ds143071.mlab.com:43071/playerdata', function(err) {
+    //mongodb://localhost:27017/userdata
+    //mongodb://raj:raj@ds143071.mlab.com:43071/playerdata
     if (err) {
-        console.log('Unable to connect to Mongo.');
+        console.log(err);
         process.exit(1);
     } else {
             console.log('MongoDB Listening at port 3000....');
