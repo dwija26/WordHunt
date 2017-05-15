@@ -86,7 +86,7 @@
         $.ajax({
             type : 'GET',
             url :'/profile',
-            success: function(session){
+            success: function(user){
                 $('#myModalLabel').append('<span>'+session.username+'</span><hr>');
                 $('#media-heading').append('<span>'+session.username+'</span><hr>');
             },
@@ -102,7 +102,7 @@
                     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-                ga('create', 'UA-99147431-1', 'auto');
+                ga('create', 'UA-99147431-2', 'auto');
                 ga('send', 'pageview');
 
             </script>
