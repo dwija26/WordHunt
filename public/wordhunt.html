@@ -37,7 +37,21 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="admin.html"><span class="glyphicon glyphicon-user"></span>Admin </a></li>
-                    <li><a href="login.html"><form action="/logout" method="get"><input type="submit" value="Logout"><span class="glyphicon glyphicon-log-in"></span> Logout</form></a></li>
+                    <li class="logout"><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Logout</form></a></li>
+                    <script>
+                        $(function(){
+                            $.ajax({
+                                type : 'GET',
+                                url :'/logout',
+                                success: function(confirm){
+                                        console.log("Logged Out" +confirm);
+                                        },
+                                error: function(){
+                                    alert('Error loading the contents');
+                                }
+                            });
+                        });
+                    </script>
                 </ul>
             </div>
         </div>

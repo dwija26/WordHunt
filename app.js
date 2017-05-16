@@ -109,31 +109,6 @@ app.post('/verify', function (req,res) {
     });
 });
 
-app.get('/login',function(req,res){
-    res.redirect('/login.html');
-});
-app.get('/signup',function(req,res){
-    res.redirect('/register.html');
-});
-app.get('/wordhunt',function(req,res){
-    res.redirect('/wordhunt.html');
-});
-app.get('/admin',requireLogin,function(req,res){
-    res.redirect('/admin.html');
-});
-app.get('/leaderboard',requireLogin,function(req,res){
-    res.redirect('/leaderboard.html');
-});
-app.get('/achievements',requireLogin,function(req,res){
-    res.redirect('/achievements.html');
-});
-app.get('/profile',requireLogin,function(req,res){
-    res.redirect('/profile.html');
-});
-app.get('/players',requireLogin,function(req,res){
-    res.redirect('/users.html');
-});
-
 // <---- This is for showing users to Admin ---->NEED TO MAKE ADMIN LOGIN
 app.get('/users',function (req,res) {
     User.getUser(function (err, users) {
@@ -183,16 +158,57 @@ app.delete('/delete/:_id',function (req,res) {
     });
 });
 
-//<--------THis is for LOGOUT----->
+//<----THis is for LOGOUT---->
 app.post('/logout',function(req,res){
     req.session.destroy(function(err) {
         if(err) {
             console.log(err);
+            res.send(err);
         } else {
             res.redirect('/');
         }
     });
 
+});
+
+app.get('/login',function(req,res){
+    res.redirect('/login.html');
+});
+app.get('/signup',function(req,res){
+    res.redirect('/register.html');
+});
+app.get('/wordhunt',function(req,res){
+    res.redirect('/wordhunt.html');
+});
+app.get('/admin',requireLogin,function(req,res){
+    res.redirect('/admin.html');
+});
+app.get('/leaderboard',requireLogin,function(req,res){
+    res.redirect('/leaderboard.html');
+});
+app.get('/achievements',requireLogin,function(req,res){
+    res.redirect('/achievements.html');
+});
+app.get('/profile',requireLogin,function(req,res){
+    res.redirect('/profile.html');
+});
+app.get('/players',requireLogin,function(req,res){
+    res.redirect('/users.html');
+});
+app.get('/admin.html',requireLogin,function(req,res){
+    res.redirect('/admin.html');
+});
+app.get('/leaderboard.html',requireLogin,function(req,res){
+    res.redirect('/leaderboard.html');
+});
+app.get('/achievements.html',requireLogin,function(req,res){
+    res.redirect('/achievements.html');
+});
+app.get('/profile.html',requireLogin,function(req,res){
+    res.redirect('/profile.html');
+});
+app.get('/users.html',requireLogin,function(req,res){
+    res.redirect('/users.html');
 });
 
 //SENDS HTML RESPONSE
@@ -213,9 +229,9 @@ app.post('/logout',function(req,res){
 //     res.sendFile(__dirname + '/players/views/register.html');
 // });
 
+
+
 //CONNECTING TO MONGODB ON START
-
-
 mongoose.connect('mongodb://raj:raj@ds143071.mlab.com:43071/playerdata', function(err) {
     //mongodb://localhost:27017/userdata
     //mongodb://raj:raj@ds143071.mlab.com:43071/playerdata
