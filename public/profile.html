@@ -85,10 +85,14 @@
     $(function(){
         $.ajax({
             type : 'GET',
-            url :'/profile',
-            success: function(user){
-                $('#myModalLabel').append('<span>'+session.username+'</span><hr>');
-                $('#media-heading').append('<span>'+session.username+'</span><hr>');
+            url :'/users',
+            success: function(users){
+                $.each(users,function (i, user) {
+                    if(user.username==="Raj Chandra") {
+                        $('#myModalLabel').append('<span>' + user.username + '</span><hr>');
+                        $('#media-heading').append('<span>' + user.username + '</span><hr>');
+                    }
+                });
             },
             error: function(){
                 alert('Error loading the contents');

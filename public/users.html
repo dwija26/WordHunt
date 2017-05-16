@@ -28,22 +28,22 @@
 </div></center>
 <script>
     $(function(){
-       var $users=$('#user-data');
-       var c=1;
-       $.ajax({
-           type : 'GET',
-           url :'/users',
-           success: function(users){
-               $.each(users,function (i, user) {
-                   $users.append('<li>'+c+'<br><p>Username :'+user.username+' <br>Password : '+user.password+'</p></li><hr>');
-                   c++;
-               })
-               $users.append('<li><p>Total :'+ (c-1) +'</p></li>');
-           },
-           error: function(){
-               alert('Error loading the contents');
-           }
-       });
+        var $users=$('#user-data');
+        var c=1;
+        $.ajax({
+            type : 'GET',
+            url :'/users',
+            success: function(users){
+                $.each(users,function (i, user) {
+                    $users.append('<li>'+c+'<br><p>Username :'+user.username+' <br>Password : '+user.password+'</p></li><hr>');
+                    c++;
+                })
+                $users.append('<li><p>Total :'+ (c-1) +'</p></li>');
+            },
+            error: function(){
+                alert('Error loading the contents');
+            }
+        });
     });
 </script>
 <script>
