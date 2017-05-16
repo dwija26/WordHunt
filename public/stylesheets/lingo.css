@@ -6,16 +6,8 @@
     font-family: 'Acme', sans-serif;
     padding-top: 1%;
 }
-
-body{
-    background-image: url(https://s-media-cache-ak0.pinimg.com/originals/a6/2b/fc/a62bfcec715e210c54a41e0fbcd2532c.jpg);
-    background-position: right bottom, left top;
-    background-repeat: no-repeat, repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
-
 .main-content{
+    background-color: #FFE1FF;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
