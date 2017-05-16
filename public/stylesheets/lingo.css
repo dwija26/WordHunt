@@ -6,7 +6,8 @@
     font-family: 'Acme', sans-serif;
     padding-top: 1%;
 }
-.main-content{
+
+body{
     background-color: #FFE1FF;
     background-size: 100% 100%;
     background-repeat: no-repeat;
