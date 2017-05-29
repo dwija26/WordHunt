@@ -3,7 +3,6 @@
  */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcryptjs');
 
 var usersSchema = new Schema({
     username: {
@@ -47,12 +46,12 @@ module.exports.verifyPassword = function (user, callback) {
             console.log("Username is Incorrect");
             return callback(null,"Invalid User name");
         }
-        else if((bcrypt.compareSync(details.password,user.password))) {
-            console.log("Password is Incorrect");
-            return callback(null, details);
+        else if(details.password === user.password) {
+            console.log("Password is Incorrecst");
+            return callback(null, null);
         }
         else{
-            return callback(null,null);
+            return callback(null,details);
         }
     });
 }
