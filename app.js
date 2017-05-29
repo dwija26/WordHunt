@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('client-sessions');
-var bcrypt = require('bcryptjs');
 var assert = require('assert');
 var mongoose = require('mongoose');
 var User = require('./model/users');
