@@ -29,7 +29,6 @@ app.use(express.static(__dirname+'/public'));
 app.use('/', index);
 app.use('/about', about);
 
-
 //MIDDLEWARE
 
 app.use(bodyParser.urlencoded({ extended: false }));
