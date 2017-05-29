@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = "myApp">
     <head>
         <title>log In | WordHunt</title>
         <meta charset="utf-8">
@@ -10,6 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Acme|Josefin+Slab|Russo+One" rel="stylesheet">
         <link href="stylesheets/login.css" rel="stylesheet" >
         <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+        <script src="https://code.angularjs.org/1.6.0-rc.2/angular-messages.min.js" type="text/javascript"></script> //for messaging
+        <script src="https://code.angularjs.org/1.6.0-rc.2/angular.min.js" type="text/javascript"></script> //for angular.js
+        <script src="https://code.angularjs.org/1.6.0-rc.2/angular-resource.min.js"  type="text/javascript" ></script>// for resource handling
     </head>
     <body>
     <header>WordHunt</header>
@@ -17,7 +20,7 @@
         <div class="row">
             <div class="col-lg-12 main-container"><center>
                 <div class="input-group">
-                    <form action="/verify" method="post" >
+                    <form action="http://127.0.0.1:3000/verify" method="post" >
                         <!--http://server120.hostinger.in
                             http://127.0.0.1:3000-->
                         <input type="text" name="username" class="form-control" id="username" placeholder="Username"><br><br><br>
