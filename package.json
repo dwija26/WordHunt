@@ -1,7 +1,8 @@
 {
   "name": "wordhunt",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "a really cool app to play word game.",
   "engines": {
     "node": "6.10.0"
   },
