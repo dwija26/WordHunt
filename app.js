@@ -69,7 +69,7 @@ var db = mongoose.connection;
 
 //CREATING ROUTES FOR THE QUERIES
 
-// <---- This is for Sign  ---->
+// <---- This is for Sign in ---->
 app.post('/register',function (req,res) {
     var user = req.body;
     // var hash;
