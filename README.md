@@ -1,2 +1,2 @@
 # WordHunt
-Its a web app for playing the word game.
+Its a web application for playing the word game.
